@@ -3,7 +3,7 @@ from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveStee
 from ev3dev2 .sound import Sound
 from time import sleep
 
-#using getpass to prevent echoing the code... not really needed
+#using 'getpass' to prevent echoing the code... not really needed, 'input' is enough
 from getpass import getpass
 
 ###
