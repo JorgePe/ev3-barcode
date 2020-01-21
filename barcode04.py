@@ -1,4 +1,7 @@
 #! /usr/bin/env python3
+
+# thanks to ROBOTMAK3RS Lee Magpili and Daniel Walton for inspiration
+
 from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveSteering
 from ev3dev2.sound import Sound
 from ev3dev2.button import Button
@@ -7,10 +10,6 @@ from time import sleep
 
 #using getpass to prevent echoing the code... not really needed, 'input' works fine
 from getpass import getpass
-
-
-### after seeing Daniel Walton's idea on another project
-### decided to store the code inside of the dictionary and invoke it with "exec"
 
 # sugestions:
 # timing 1 | 2 | 3 | 4 | 5 | random
