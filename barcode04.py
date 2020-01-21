@@ -22,35 +22,30 @@ codedict = {
     1: {
         "barcode" : "5600000000014",
         "command" : "Forward",
-        "value" : 1,
         "function" : "drive.on_for_seconds(0, SpeedPercent(50), 1.5)"
     },
 
     2: {
         "barcode" : "5600000000021",
         "command" : "Backward",
-        "value" : 2,
         "function" : "drive.on_for_seconds(0, SpeedPercent(-50), 1.5)"
     },
 
     3 : {
         "barcode" : "5600000000038",
         "command" : "Left",
-        "value" : 3,
         "function" : "drive.on_for_seconds(-100, SpeedPercent(50), 0.5)"
     },
 
     4 : {
         "barcode" : "5600000000045",
         "command" : "Right",
-        "value" : 4,
         "function" : "drive.on_for_seconds(100, SpeedPercent(50), 0.5)"
     },
 
     5 : {
         "barcode" : "5600000000052",
         "command" : "Do it",
-        "value" : 5,
         "function" : "sound.speak('Dude, do what?')"
     }
 }
