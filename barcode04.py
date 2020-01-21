@@ -7,6 +7,7 @@ from ev3dev2.sound import Sound
 from ev3dev2.button import Button
 
 from time import sleep
+from random import randint
 
 #using getpass to prevent echoing the code... not really needed, 'input' works fine
 from getpass import getpass
@@ -17,35 +18,108 @@ from getpass import getpass
 # sounds
 # notes: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
 
+timing = 1.0
+speedpct = 40
+
+DELAY = 1.0
+LONGDELAY = 3.0
+DEBOUNCE = 0.2
+
 codedict = {
     1: {
         "barcode" : "5600000000014",
         "command" : "Forward",
-        "function" : "drive.on_for_seconds(0, SpeedPercent(50), 1.5)"
+        "function" : "drive.on_for_seconds(0, SpeedPercent(speedpct), timing)"
     },
 
     2: {
         "barcode" : "5600000000021",
         "command" : "Backward",
-        "function" : "drive.on_for_seconds(0, SpeedPercent(-50), 1.5)"
+        "function" : "drive.on_for_seconds(0, SpeedPercent(-speedpct), timing)"
     },
 
     3 : {
         "barcode" : "5600000000038",
         "command" : "Left",
-        "function" : "drive.on_for_seconds(-100, SpeedPercent(50), 0.5)"
+        "function" : "drive.on_for_seconds(-100, SpeedPercent(speedpct), timing)"
     },
 
     4 : {
         "barcode" : "5600000000045",
         "command" : "Right",
-        "function" : "drive.on_for_seconds(100, SpeedPercent(50), 0.5)"
+        "function" : "drive.on_for_seconds(100, SpeedPercent(speedpct), timing)"
     },
 
     5 : {
         "barcode" : "5600000000052",
         "command" : "Do it",
         "function" : "sound.speak('Dude, do what?')"
+    },
+    
+    6 : {
+        "barcode" : "5600000000069",
+        "command" : "Timing 1 second",
+        "function" : "timing = 1.0"
+    },
+    
+    7 : {
+        "barcode" : "5600000000076",
+        "command" : "Timing 2 seconds",
+        "function" : "timing = 2.0"
+    },
+    
+    8 : {
+        "barcode" : "5600000000083",
+        "command" : "Timing 3 seconds",
+        "function" : "timing = 3.0"
+    },
+    
+    9 : {
+        "barcode" : "5600000000090",
+        "command" : "Timing 4 seconds",
+        "function" : "timing = 4.0"
+    },
+    
+    10 : {
+        "barcode" : "5600000000106",
+        "command" : "Timing 5 seconds",
+        "function" : "timing = 5.0"
+    },
+    
+    11 : {
+        "barcode" : "5600000000113",
+        "command" : "Timing Random",
+        "function" : "timing = float(randint(1,5))"
+    },
+
+    12 : {
+        "barcode" : "5600000000120",
+        "command" : "Speed 20 per cent",
+        "function" : "speedpct = 20"
+    },
+    
+    13 : {
+        "barcode" : "5600000000137",
+        "command" : "Speed 40 per cent",
+        "function" : "speedpct = 40"
+    },
+    
+    14 : {
+        "barcode" : "5600000000144",
+        "command" : "Speed 60 per cent",
+        "function" : "speedpct = 60"
+    },
+    
+    15 : {
+        "barcode" : "5600000000151",
+        "command" : "Speed 80 per cent",
+        "function" : "speedpct = 80"
+    },
+    
+    16 : {
+        "barcode" : "5600000000168",
+        "command" : "Speed 100 per cent",
+        "function" : "speedpct = 100"
     }
 }
 
@@ -65,7 +139,7 @@ while True:
     sound.speak("Please insert the scanner and press ENTER to create a program")
     while not btn.enter:
         pass    
-    sleep(0.2)  # debounce, not sure if needed but doesn't hurt
+    sleep(DEBOUNCE)  # debouncing delay, not sure if needed but doesn't hurt
 
     # keep adding steps to the sequence until [Enter] is pressed again    
     while True:
@@ -103,15 +177,15 @@ while True:
 
     while not btn.enter:
         pass
-    sleep(0.5)
+    sleep(DELAY)
 
     for step in sequence:
         exec(step)
-        sleep(1.0)
+        sleep(DELAY)
 
     print("Done!")
     sound.speak("Done!")
-    sleep(2)
+    sleep(LONGDELAY)
 
     # clear the sequence before starting again
     sequence.clear()
