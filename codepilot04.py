@@ -89,7 +89,7 @@ codedict = {
     11 : {
         "barcode" : "5600000000113",
         "command" : "Timing Random",
-        "function" : "timing = float(randint(1,5)); sound.speak("Timing is now " + str(timing) + "seconds")"
+        "function" : "timing = float(randint(1,5)); sound.speak('Timing is now ' + str(timing) + 'seconds')"
     },
 
     12 : {
