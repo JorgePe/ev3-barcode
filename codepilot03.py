@@ -8,7 +8,8 @@ from time import sleep
 #using getpass to prevent echoing the code... not really needed, 'input' works fine
 from getpass import getpass
 
-###
+### after seeing Daniel Walton's idea on another project
+### decided to store the code inside of the dictionary and invoke it with "exec"
 
 codedict = {
     1: {
