@@ -23,7 +23,6 @@ speedpct = 40
 
 note_duration = 0.2
 note_volume = 100
-note_play_type = 0
 
 DELAY = 1.0
 LONGDELAY = 3.0
@@ -130,49 +129,49 @@ codedict = {
     17 : {
         "barcode" : "5600000000175",
         "command" : "DO",
-        "function" : "Sound.play_note("C4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('C4', note_duration, note_volume)"
     },
     
 
     18 : {
         "barcode" : "5600000000182",
         "command" : "RE",
-        "function" : "Sound.play_note("D4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('D4', note_duration, note_volume)"
     },
     
 
     19 : {
         "barcode" : "5600000000199",
         "command" : "MI",
-        "function" : "Sound.play_note("E4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('E4', note_duration, note_volume)"
     },
     
 
     20 : {
         "barcode" : "5600000000205",
         "command" : "FA",
-        "function" : "Sound.play_note("F4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('F4', note_duration, note_volume)"
     },
     
 
     21 : {
         "barcode" : "5600000000212",
         "command" : "SOL",
-        "function" : "Sound.play_note("G4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('G4', note_duration, note_volume)"
     },
     
 
     22 : {
         "barcode" : "5600000000229",
         "command" : "LA",
-        "function" : "Sound.play_note("A4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('A4', note_duration, note_volume)"
     },
     
 
     23 : {
         "barcode" : "5600000000236",
         "command" : "SI",
-        "function" : "Sound.play_note("B4", note_duration, note_volume, note_play_type=0)"
+        "function" : "sound.play_note('B4', note_duration, note_volume)"
     },
     
 
