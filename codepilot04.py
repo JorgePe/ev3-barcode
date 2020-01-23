@@ -24,7 +24,7 @@ speedpct = 40
 note_duration = 0.2
 note_volume = 100
 
-DELAY = 1.0
+DELAY = 0.5
 LONGDELAY = 3.0
 DEBOUNCE = 0.2
 
