@@ -12,11 +12,9 @@ from random import randint
 #using getpass to prevent echoing the code... not really needed, 'input' works fine
 from getpass import getpass
 
-# sugestions:
-# timing 1 | 2 | 3 | 4 | 5 | random
-# speed 20 | 40 | 60
-# sounds
-# notes: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+# sugestions for future codes:
+# pre-recorded sounds (robot, horn, "hello!")
+# basic loop
 
 timing = 1.0
 speedpct = 40
